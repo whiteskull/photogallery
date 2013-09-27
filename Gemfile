@@ -35,9 +35,13 @@ gem 'bootstrap-sass-rails'
 
 gem 'haml-rails'
 
+gem 'simple_form'
+
 gem 'carrierwave'
 
 gem 'mini_magick'
+
+gem 'rails_admin'
 
 gem 'simple_form'
 
