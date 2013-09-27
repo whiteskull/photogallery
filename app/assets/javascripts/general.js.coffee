@@ -1,4 +1,4 @@
 $ ->
 
-  Galleria.loadTheme('/assets/themes/twelve/galleria.twelve.js')
+  Galleria.loadTheme('/assets/themes/folio/galleria.folio.js')
   Galleria.run('#album')
