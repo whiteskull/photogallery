@@ -9,4 +9,5 @@ class Photo < ActiveRecord::Base
   mount_uploader :image, PhotoUploader
 
   validates :album_id, presence: true
+  validates :image, presence: true
 end
