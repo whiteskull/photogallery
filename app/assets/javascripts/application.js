@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require galleria-1.2.9
+//= require flickr/galleria.flickr.min
 //= require general
