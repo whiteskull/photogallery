@@ -1,8 +1,42 @@
-#album {
-	width: 500px;
-	height: 400px;
+body {
+	background: image-url('background.jpg') 50% 50%;
+	background-attachment: fixed;
+}
+#wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	margin-top: 50px;
 
-	.galleria-image {
-		width: 100px;
+	#content {
+		width: 100%;
+		background: image-url('background_light.png');
+		padding: 50px;
+	}
+}
+#album {
+	width: 100%;
+	height: 546px;
+
+	&.twelve {
+
+		.galleria-image {
+			width: 133px;
+			height: 75px;
+		}
+	}
+	&.folio {
+
+		.galleria-image {
+			width: 215px;
+		}
+		.galleria-container {
+			background: transparent;
+		}
+		.galleria-preloader {
+			height: 4px;
+			width: 50%;
+			margin-left: 25%;
+			margin-top: 260px;
+		}
 	}
 }

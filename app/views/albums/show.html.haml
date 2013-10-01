@@ -1,4 +1,7 @@
-#album
+- content_for :page_title do
+  = @album.title
+
+#album{class: params[:theme]}
 
 :javascript
   Galleria.run('#album', {

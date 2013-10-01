@@ -2,5 +2,8 @@
 %html
   = render 'layouts/head'
   %body
-    = render 'layouts/account_manage'
-    = yield
+    -#= render 'layouts/account_manage'
+    #wrapper
+      #content
+        %h1= yield :page_title
+        = yield

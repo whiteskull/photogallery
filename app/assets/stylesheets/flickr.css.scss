@@ -1,8 +1,10 @@
 .flickr-loader {
-	background: image-url('loader.gif') no-repeat 50% 50%;
+	background: image-url('loader_flickr.gif') no-repeat 50% 50%;
 	background-color: #000;
-	width: 48px;
-	height: 48px;
-	opacity: 0.7;
-	filter: alpha(opacity=87);
+	width: 128px;
+	height: 128px;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+	margin: 0 auto;
+	margin-top: 200px;
 }
