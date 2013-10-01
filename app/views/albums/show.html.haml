@@ -1,5 +1,10 @@
 - content_for :page_title do
+  .back= link_to image_tag('back.png'), root_path
   = @album.title
+  .theme
+    = link_to image_tag('icon_twelve.png'), album_path(@album), class: params[:theme] == 'twelve' ? 'active' : ''
+    = link_to image_tag('icon_azur.png'), theme_album_path(@album, 'azur'), class: params[:theme] == 'azur' ? 'active' : ''
+    = link_to image_tag('icon_folio.png'), theme_album_path(@album, 'folio'), class: params[:theme] == 'folio' ? 'active' : ''
 
 #album{class: params[:theme]}
 
@@ -7,6 +12,8 @@
   Galleria.run('#album', {
       flickr: "set:#{@album.flickr}",
       flickrOptions: {
-          sort: 'date-posted-asc'
+          sort: 'date-posted-asc',
+          thumbSize: 'small',
+          imageSize: 'original'
       }
   });

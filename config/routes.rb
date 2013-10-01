@@ -6,7 +6,7 @@ Photogallery::Application.routes.draw do
 
   resources :albums, only: [:show] do
     member do
-      get '/:theme', action: :show, constraints: { theme: /folio|azur/ }
+      get '/:theme', action: :show, constraints: { theme: /folio|azur/ }, as: :theme
     end
   end
 
