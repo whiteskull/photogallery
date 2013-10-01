@@ -3,8 +3,11 @@ class Album < ActiveRecord::Base
 
   cattr_accessor :current_user
 
+  mount_uploader :image, AlbumUploader
+
   belongs_to :user
-  has_many :photos
+
+  scope :visible, -> { where(is_visible: true) }
 
   validates :title, presence: true
 end

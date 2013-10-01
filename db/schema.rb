@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130927075236) do
+ActiveRecord::Schema.define(version: 20131001110409) do
 
   create_table "albums", force: true do |t|
-    t.string   "title",       null: false
+    t.string   "title",                      null: false
     t.text     "description"
     t.string   "image"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "date"
+    t.boolean  "is_visible",  default: true
+    t.string   "flickr"
   end
 
   add_index "albums", ["user_id"], name: "index_albums_on_user_id"

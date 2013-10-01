@@ -1,2 +1,9 @@
 #album
-  -#= render partial: 'albums/photo', collection: @photos
+
+:javascript
+  Galleria.run('#album', {
+      flickr: "set:#{@album.flickr}",
+      flickrOptions: {
+          sort: 'date-posted-asc'
+      }
+  });

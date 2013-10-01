@@ -1,16 +1,6 @@
 !!!
 %html
-  %head
-    %title Photogallery
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    -#= stylesheet_link_tag    "themes/twelve/galleria.twelve", media: "all"
-    -#= stylesheet_link_tag    "themes/azur/galleria.azur", media: "all"
-    = stylesheet_link_tag    "themes/folio/galleria.folio", media: "all"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    -#= javascript_include_tag "themes/twelve/galleria.twelve"
-    -#= javascript_include_tag "themes/azur/galleria.azur"
-    = javascript_include_tag "themes/folio/galleria.folio"
-    = csrf_meta_tags
+  = render 'layouts/head'
   %body
     = render 'layouts/account_manage'
     = yield

@@ -10,6 +10,10 @@ module DefaultUser
   private
 
   def set_current_user
-    self.user_id = current_user.try(:id) unless current_user.try(:is_admin?)
+    if current_user.try(:is_admin?)
+      self.user_id = current_user.try(:id) unless self.user_id
+    else
+      self.user_id = current_user.try(:id)
+    end
   end
 end

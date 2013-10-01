@@ -4,9 +4,13 @@ Photogallery::Application.routes.draw do
 
   devise_for :users
 
-  resources :albums, only: [:index, :show]
+  resources :albums, only: [:show] do
+    member do
+      get '/:theme', action: :show, constraints: { theme: /folio|azur/ }
+    end
+  end
 
-  root to: 'general#index'
+  root to: 'albums#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

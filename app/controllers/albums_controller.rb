@@ -1,9 +1,10 @@
 class AlbumsController < ApplicationController
   def index
+    @albums = Album.visible
   end
 
   def show
     @album = Album.find(params[:id])
-    @photos = @album.photos
+    params[:theme] ||= 'twelve'
   end
 end
