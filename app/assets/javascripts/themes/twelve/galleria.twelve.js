@@ -13,7 +13,7 @@
 Galleria.addTheme({
     name: 'twelve',
     author: 'Galleria',
-    css: 'galleria.twelve.css',
+    css: false,
     defaults: {
         transition: "pulse",
         transitionSpeed: 500,
