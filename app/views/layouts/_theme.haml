@@ -1,3 +1,7 @@
 - if controller_name == 'albums' && action_name == 'show'
-  = stylesheet_link_tag    "themes/#{params[:theme]}/galleria.#{params[:theme]}", media: "all"
-  = javascript_include_tag "themes/#{params[:theme]}/galleria.#{params[:theme]}"
+  - if params[:theme] == 'video'
+    = stylesheet_link_tag    "themes/azur/galleria.azur", media: "all"
+    = javascript_include_tag "themes/azur/galleria.azur"
+  - else
+    = stylesheet_link_tag    "themes/#{params[:theme]}/galleria.#{params[:theme]}", media: "all"
+    = javascript_include_tag "themes/#{params[:theme]}/galleria.#{params[:theme]}"

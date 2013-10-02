@@ -9,5 +9,6 @@ class ApplicationController < ActionController::Base
 
   def set_current_user
     Album.current_user = current_user
+    Video.current_user = current_user
   end
 end

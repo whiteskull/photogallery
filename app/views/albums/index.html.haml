@@ -1,3 +1,7 @@
 - content_for :page_title do
   Альбомы
-= render partial: 'album', collection: @albums
+  .search
+    %form{action: root_path, method: 'get'}
+      = text_field_tag :query, params[:query], placeholder: 'Поиск'
+
+#albums.clearfix= render partial: 'album', collection: @albums

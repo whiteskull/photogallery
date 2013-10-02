@@ -1,19 +1,27 @@
 - content_for :page_title do
-  .back= link_to image_tag('back.png'), root_path
+  .back= link_to image_tag('back.png'), root_path, title: 'Вернуться к выбору альбомов'
   = @album.title
   .theme
-    = link_to image_tag('icon_twelve.png'), album_path(@album), class: params[:theme] == 'twelve' ? 'active' : ''
-    = link_to image_tag('icon_azur.png'), theme_album_path(@album, 'azur'), class: params[:theme] == 'azur' ? 'active' : ''
-    = link_to image_tag('icon_folio.png'), theme_album_path(@album, 'folio'), class: params[:theme] == 'folio' ? 'active' : ''
+    - if @album.flickr.present?
+      = link_to image_tag('icon_twelve.png'), album_path(@album), class: params[:theme] == 'twelve' ? 'active' : '', title: 'Просмотр фотографий  в полный размер'
+      = link_to image_tag('icon_azur.png'), theme_album_path(@album, 'azur'), class: params[:theme] == 'azur' ? 'active' : '', title: 'Просмотр фотографий в оригинальный размер'
+      = link_to image_tag('icon_folio.png'), theme_album_path(@album, 'folio'), class: params[:theme] == 'folio' ? 'active' : '', title: 'Миниатюры и полноэкранный режим'
 
 #album{class: params[:theme]}
+  - if params[:theme] == 'video'
+    - @album.videos.each do |video|
+      = link_to '<span class="video">Video</span>'.html_safe, video.link
 
-:javascript
-  Galleria.run('#album', {
-      flickr: "set:#{@album.flickr}",
-      flickrOptions: {
-          sort: 'date-posted-asc',
-          thumbSize: 'small',
-          imageSize: 'original'
-      }
-  });
+- if params[:theme] == 'video'
+  :javascript
+    Galleria.run('#album');
+- else
+  :javascript
+    Galleria.run('#album', {
+        flickr: "set:#{@album.flickr}",
+        flickrOptions: {
+            sort: 'date-posted-asc',
+            thumbSize: 'small',
+            imageSize: 'original'
+        }
+    });

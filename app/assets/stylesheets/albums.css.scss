@@ -6,6 +6,7 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	margin-top: 50px;
+	margin-bottom: 50px;
 
 	#header {
 		position: relative;
@@ -23,14 +24,39 @@ body {
 			filter: alpha(opacity=90);
 			padding-right: 200px;
 
+			color: #d7ceb2;
+			text-shadow: 2px 2px 0px #2c2e38, 3px 3px 0px #5c5f72;
+			letter-spacing: 4px;
+
+			.search {
+				position: absolute;
+				right: 50px;
+				top: 4px;
+
+				input {
+					background-color: #575c83;
+					border: none;
+					font-size: 14px;
+					padding: 0 5px;
+					color: #fff;
+					opacity: 0.8;
+					filter: alpha(opacity=80);
+					text-align: right;
+					width: 528px;
+				}
+			}
 			.back {
 				position: absolute;
 				left: 0;
 				top: 0;
 				widht: 30px;
 				height: 100%;
-				padding: 0 10px;
 
+				a {
+					display: block;
+					padding: 0 10px;
+					height: 100%;
+				}
 				&:hover {
 					background: image-url('background_green.png');
 				}
@@ -66,6 +92,90 @@ body {
 		background: image-url('background_light.png');
 		padding: 50px;
 
+	}
+}
+#albums {
+	width: 100%;
+	margin-bottom: -44px;
+
+	.album {
+		position: relative;
+		float: left;
+		margin-bottom: 44px;
+		width: 48%;
+		min-width: 250px;
+		height: 332px;
+		overflow: hidden;
+		text-shadow: 1px 1px 1px #333;
+
+		&:nth-child(even) {
+			margin-left: 44px;
+		}
+		&:nth-child(odd) {
+			margin-left: 0;
+		}
+		a.image img {
+			transition: transform .35s ease;
+			-webkit-transition: -webkit-transform .35s;
+		}
+		&:hover a.image.odd img {
+			transform: scale(1.31) rotate(-3deg);
+			-ms-transform: scale(1.31) rotate(-3deg);
+			-webkit-transform: scale(1.31) rotate(-3deg);
+		}
+		&:hover a.image.even img {
+			transform: scale(1.31) rotate(3deg);
+			-ms-transform: scale(1.31) rotate(3deg);
+			-webkit-transform: scale(1.31) rotate(3deg);
+		}
+		.video,
+		.theme {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 30px;
+
+			a {
+				background: image-url('background_dark.png');
+				display: block;
+				float: left;
+				padding: 10px 10px;
+				width: 50px;
+
+				&:hover {
+					background: image-url('background_green.png');
+				}
+			}
+		}
+		.video {
+			left: 0;
+
+			a {
+				padding: 6px 10px;
+			}
+		}
+		.caption {
+			cursor: pointer;
+			position: absolute;
+			width: 100%;
+			background: image-url('background_dark.png');
+			padding: 2px 10px 10px;
+			top: 300px;
+			
+			.title {
+				font-size: 18px;
+				color: #eee;
+			}
+			.description {
+				color: #ddd;
+				margin-top: 8px;
+			}
+			.date {
+				margin-top: 12px;
+				text-align: right;
+				color: deepskyblue;
+			}
+		}
 	}
 }
 #album {
@@ -115,6 +225,9 @@ body {
 				margin-left: 7px;
 			}
 		}
+	}
+	#albums {
+		margin-left: 5px;
 	}
 }
 @media screen and (max-width: 600px) {

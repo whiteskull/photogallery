@@ -1,0 +1,7 @@
+ru:
+  time:
+    formats:
+      date: "%d %B %Y"
+      long: "%d %B %Y в %H:%M"
+      standart: "%d %B %Y, %H:%M"
+      short: "%d %B в %H:%M"

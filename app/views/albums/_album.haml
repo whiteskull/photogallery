@@ -1,2 +1,16 @@
 .album
-  = link_to image_tag(album.image.url), album_path(album)
+  = link_to image_tag(album.image.url, width: '535px'), "#{album.flickr.present? ? album_path(album) : theme_album_path(album, 'video')}", class: "image #{cycle('odd', 'even')}"
+  - if album.videos.any?
+    .video= link_to image_tag('icon_video.png'), theme_album_path(album, 'video'), title: 'Видео'
+  - if album.flickr.present?
+    .theme
+      = link_to image_tag('icon_twelve.png'), album_path(album), title: 'Просмотр фотографий  в полный размер'
+      = link_to image_tag('icon_azur.png'), theme_album_path(album, 'azur'), title: 'Просмотр фотографий в оригинальный размер'
+      = link_to image_tag('icon_folio.png'), theme_album_path(album, 'folio'), title: 'Миниатюры и полноэкранный режим'
+  .caption
+    .title= album.title
+    - if album.description.present?
+      .description= album.description
+    - if album.date
+      .date= localize(album.date, format: :date)
+
