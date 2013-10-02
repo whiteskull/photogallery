@@ -2,6 +2,8 @@
   .back= link_to image_tag('back.png'), root_path, title: 'Вернуться к выбору альбомов'
   = @album.title
   .theme
+    - if @album.videos.any?
+      = link_to image_tag('icon_video.png'), theme_album_path(@album, 'video'), title: 'Видео', class: "video #{params[:theme] == 'video' ? 'active' : ''}"
     - if @album.flickr.present?
       = link_to image_tag('icon_twelve.png'), album_path(@album), class: params[:theme] == 'twelve' ? 'active' : '', title: 'Просмотр фотографий  в полный размер'
       = link_to image_tag('icon_azur.png'), theme_album_path(@album, 'azur'), class: params[:theme] == 'azur' ? 'active' : '', title: 'Просмотр фотографий в оригинальный размер'

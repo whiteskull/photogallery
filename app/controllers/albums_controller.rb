@@ -1,9 +1,7 @@
 class AlbumsController < ApplicationController
   def index
     @albums = Album.visible
-    if params[:query].present?
-      @albums = @albums.search(params[:query])
-    end
+    @albums = @albums.search(params[:query]) if params[:query].present?
   end
 
   def show

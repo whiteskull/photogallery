@@ -80,9 +80,15 @@ body {
 					&:hover {
 						background: image-url('background_green.png');
 					}
-				}
-				img {
-					margin-top: 5px;
+					img {
+						margin-top: 5px;
+					}
+					&.video {
+						
+						img {
+							margin-top: 1px;
+						}
+					}
 				}
 			}
 		}
