@@ -34,7 +34,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['Album', 'User']
 
   # Include specific models (exclude the others):
-  config.included_models = ['Album', 'User', 'Video']
+  config.included_models = ['Album', 'Video', 'Setting', 'User']
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]

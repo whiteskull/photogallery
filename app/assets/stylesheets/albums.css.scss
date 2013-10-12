@@ -1,6 +1,7 @@
-body {
-	background: image-url('background.jpg') 50% 50%;
-	background-attachment: fixed;
+#admin {
+	position: fixed;
+	right: 10px;
+	top: 10px;
 }
 #wrapper {
 	max-width: 1200px;

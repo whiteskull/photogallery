@@ -7,3 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(email: 'admin@mail.com', password: 'password', is_admin: true)
+
+unless Setting.first
+  Setting.create
+end

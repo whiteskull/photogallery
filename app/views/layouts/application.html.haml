@@ -2,7 +2,8 @@
 %html
   = render 'layouts/head'
   %body
-    -#= render 'layouts/account_manage'
+    - if current_user.try(:is_admin?)
+      = link_to image_tag('door.png'), rails_admin_path, id: 'admin'
     #wrapper
       #header
         %h1.page-title= yield :page_title
