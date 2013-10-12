@@ -8,10 +8,17 @@ class Album < ActiveRecord::Base
   belongs_to :user
   has_many :videos
 
-  scope :visible, -> { where(is_visible: true) }
 
   validates :title, presence: true
   validates :image, presence: true
+
+  def self.visible
+    if current_user.try(:is_admin?)
+      all
+    else
+     where(is_visible: true)
+    end
+  end
 
   private
 
