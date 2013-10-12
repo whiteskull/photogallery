@@ -20,6 +20,7 @@
 - else
   :javascript
     Galleria.run('#album', {
+        autoplay: parseInt("#{@setting.autoplay * 1000}"),
         flickr: "set:#{@album.flickr}",
         flickrOptions: {
             sort: 'date-posted-asc',

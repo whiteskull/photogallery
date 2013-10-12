@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131012051906) do
+ActiveRecord::Schema.define(version: 20131012122256) do
 
   create_table "albums", force: true do |t|
     t.string   "title",                      null: false
@@ -54,7 +54,8 @@ ActiveRecord::Schema.define(version: 20131012051906) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
 
   create_table "settings", force: true do |t|
-    t.string "background"
+    t.string  "background"
+    t.integer "autoplay"
   end
 
   create_table "users", force: true do |t|
