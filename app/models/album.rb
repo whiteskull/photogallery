@@ -3,11 +3,8 @@ class Album < ActiveRecord::Base
 
   cattr_accessor :current_user
 
-  mount_uploader :image, AlbumUploader
-
   belongs_to :user
   has_many :videos
-
 
   validates :title, presence: true
   validates :image, presence: true

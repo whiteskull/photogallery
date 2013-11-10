@@ -10,7 +10,7 @@ User.create(email: 'admin@mail.com', password: 'password', is_admin: true)
 
 unless Setting.first
   params = {
-      autoplay: 7000
+      autoplay: 7
   }
   Setting.create(params)
 end

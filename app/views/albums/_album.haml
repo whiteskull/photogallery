@@ -1,5 +1,5 @@
 .album
-  = link_to image_tag(album.image.url, width: '535px'), "#{album.flickr.present? ? album_path(album) : theme_album_path(album, 'video')}", class: "image #{cycle('odd', 'even')}"
+  = link_to image_tag('stub.png', data: {id: album.image}), "#{album.flickr.present? ? album_path(album) : theme_album_path(album, 'video')}", class: "image #{cycle('odd', 'even')}"
   - if album.videos.any?
     .video= link_to image_tag('icon_video.png'), theme_album_path(album, 'video'), title: 'Видео'
   - if album.flickr.present?

@@ -17,6 +17,18 @@
 - if params[:theme] == 'video'
   :javascript
     Galleria.run('#album');
+- elsif params[:theme] == 'folio'
+  :javascript
+    Galleria.run('#album', {
+        autoplay: false,
+        flickr: "set:#{@album.flickr}",
+        flickrOptions: {
+            sort: 'date-posted-asc',
+            thumbSize: 'small',
+            imageSize: 'original',
+            max: 100
+        }
+    });
 - else
   :javascript
     Galleria.run('#album', {

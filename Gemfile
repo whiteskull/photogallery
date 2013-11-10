@@ -29,13 +29,11 @@ gem 'bootstrap-sass-rails'
 
 gem 'haml-rails'
 
-gem 'carrierwave'
-
-gem 'mini_magick'
-
 gem 'rails_admin'
 
 gem 'simple_form'
+
+gem 'pg'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -51,7 +49,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
   gem 'newrelic_rpm'
 end
