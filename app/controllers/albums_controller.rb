@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   def index
-    @albums = Album.visible
+    @albums = Album.visible.order('date DESC, created_at DESC')
     @albums = @albums.search(params[:query]) if params[:query].present?
   end
 
